@@ -16,15 +16,19 @@
 # main()
 
 def main():
-    file_write = open("write.txt", 'r')
-    line = file_write.readline()
-    count = 0
-    total = 0
-    while line != '':
-        total += int(line)
-        count += 1
+    try:
+        file_write = open("write.txt", 'r')
         line = file_write.readline()
-    file_write.close()
-    average = total / count
-    print(average)
+        count = 0
+        total = 0
+        while line != '':
+            total += int(line)
+            count += 1
+            line = file_write.readline()
+        file_write.close()
+        average = total / count
+        print(average)
+
+    except Exception as er:
+        print(er)
 main()
